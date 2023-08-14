@@ -65,3 +65,30 @@ Examples: given (3,4), you should return 1 (3 * 3 * 3 * 3 is 81, whose last digi
 Given (12,5), return 2 (which is the least significant digit of 248832: 12 * 12 * 12 * 12 * 12). 
 How high can you scale your solution? For example, what is the return value for (237,124)?
 */
+
+function lastDigitAtoB(a,b){
+    var num = 1;
+    var lastDigit = 0;
+
+    for(var i = 0; i < b; i++){
+        num *= a;
+    }
+
+    lastDigit = num % 10;
+
+    return lastDigit;
+}
+
+//Example:
+console.log(lastDigitAtoB(3,4));
+console.log(lastDigitAtoB(12,5));
+console.log(lastDigitAtoB(237,124));
+
+//We create a variable to hold the number.
+//We create a variable to hold the last digit.
+//We loop through the second number.
+//We multiply the first number by itself for each iteration.
+//We set the last digit to the number mod 10.
+//We return the last digit.
+
+//#########################################################################################################
