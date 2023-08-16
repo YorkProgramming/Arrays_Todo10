@@ -59,3 +59,61 @@ Return whether it is.
 
 Second: Return location of first match found ([-1,-1] if no match). 
 In example above, return [2,1]. */
+
+function matrixSearch(arr1, arr2){
+    var found = false;
+
+    for(var i = 0; i < arr1.length; i++){
+        for(var j = 0; j < arr1[i].length; j++){
+            if(arr1[i][j] == arr2[0][0]){
+                found = true;
+                for(var k = 0; k < arr2.length; k++){
+                    for(var l = 0; l < arr2[k].length; l++){
+                        if(arr1[i+k][j+l] != arr2[k][l]){
+                            found = false;
+                            break;
+                        }
+                    }
+                    if(!found){
+                        break;
+                    }
+                }
+            }
+            if(found){
+                return [i,j];
+            }
+        }
+    }
+    return [-1,-1];
+}
+
+//Example:
+var arr1 = [
+    [1,3,5,7],
+    [9,11,13,15],
+    [17,19,21,23],
+    [25,27,29,31]
+];
+
+var arr2 = [
+    [11,13],
+    [19,21],
+    [27,29]
+];
+
+console.log(matrixSearch(arr1,arr2));
+
+//We create a variable to hold whether we found the array or not.
+//We loop through the first array.
+//We loop through the second array.
+//We check if the first element of the second array is equal to the current element of the first array.
+//If it is, we set found to true.
+//We loop through the second array.
+//We loop through the second array.
+//We check if the current element of the first array is not equal to the current element of the second array.
+//If it is not, we set found to false and break.
+//If it is, we continue.
+//If found is true, we return the index of the first element of the first array.
+//If found is false, we return [-1,-1].
+
+//#########################################################################################################
