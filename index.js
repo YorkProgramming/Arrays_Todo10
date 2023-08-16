@@ -133,3 +133,35 @@ and given [-1,-2,-4,-3,-2,-3], return 0 (for []).
 This problem has many possible implementations. 
 Which do you prefer & why? 
 */
+
+function maxOfSubarraySums(arr){
+    var max = 0;
+    var sum = 0;
+
+    for(var i = 0; i < arr.length; i++){
+        sum += arr[i];
+        if(sum > max){
+            max = sum;
+        }
+        if(sum < 0){
+            sum = 0;
+        }
+    }
+    return max;
+}
+
+//Example:
+console.log(maxOfSubarraySums([1,2,-4,3,-2,3,-1]));
+console.log(maxOfSubarraySums([-1,-2,-4,-3,-2,-3]));
+
+//We create a variable to hold the max sum.
+//We create a variable to hold the sum.
+//We loop through the array.
+//We add the current element to the sum.
+//We check if the sum is greater than the max.
+//If it is, we set the max to the sum.
+//We check if the sum is less than 0.
+//If it is, we set the sum to 0.
+//We return the max.
+
+//#########################################################################################################
